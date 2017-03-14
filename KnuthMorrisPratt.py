@@ -1,5 +1,6 @@
 import sys
 
+#get user input from arguments
 arguments = sys.argv
 
 input = arguments[1]
@@ -34,4 +35,35 @@ while i < len(search_string):
     else:
         shift_table[i] = j
 
-print(shift_table)
+print("Shift table: "+str(shift_table))
+
+#search using KMP
+def search(input, pattern):
+    j = 0
+    i = 0
+    occurrences = 0
+
+    return occurrences
+
+#invert a string
+def reverse(to_reverse):
+    reversed = to_reverse[::-1]
+    i = 0
+    compliment = ''
+    for char in reversed:
+        if char == 'G':
+            compliment += 'C'
+        elif char == 'C':
+            compliment += 'G'
+        elif char == 'T':
+            compliment += 'A'
+        elif char == 'A':
+            compliment += 'T'
+        i += 1
+    return compliment
+
+occurs = search(genome, search_string)
+print("Occurrences of " + search_string + ": " + str(occurs))
+
+occurs = search(genome, reverse(search_string))
+print("Occurrences of reverse compliment " + str(reverse(search_string)) + ": " + str(occurs))
